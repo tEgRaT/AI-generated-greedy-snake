@@ -1,23 +1,31 @@
 :root {
-    --cell-size: calc(min(100vh, calc(100vw - var(--sidebar-width))) / 20); /* Adjusted for control component width */
-    --sidebar-width: 250px; /* Default sidebar width */
+    --cell-size: calc(min(100vh, var(--cell-width)) / 20);
+    /* Adjusted for control component width */
+    --sidebar-width: 250px;
+    /* Default sidebar width */
+    --cell-width: calc(100vw - var(--sidebar-width));
 }
 
 .game-container {
     display: flex;
     flex-direction: row;
-    align-items: flex-start; /* Align items to the top */
-    justify-content: flex-start; /* Align items to the left */
+    align-items: flex-start;
+    /* Align items to the top */
+    justify-content: flex-start;
+    /* Align items to the left */
     height: 100vh;
     width: 100vw;
 }
 
 .game-board {
     display: grid;
-    grid-template-columns: repeat(var(--columns), var(--cell-size)); /* Ensure equal width for all columns */
-    grid-template-rows: repeat(var(--rows), var(--cell-size)); /* Ensure equal height for all rows */
+    grid-template-columns: repeat(var(--columns), var(--cell-size));
+    /* Ensure equal width for all columns */
+    grid-template-rows: repeat(var(--rows), var(--cell-size));
+    /* Ensure equal height for all rows */
     background-color: #333;
-    margin-right: 0; /* Remove any right margin */
+    margin-right: 0;
+    /* Remove any right margin */
 }
 
 .snake {
@@ -29,8 +37,15 @@
 }
 
 @keyframes flash {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 .food {
@@ -38,35 +53,46 @@
 }
 
 .wall {
-    background-color: #8B0000; /* Dark red color */
-    border: 1px solid #5A0000; /* Darker border for a brick-like appearance */
-    box-sizing: border-box; /* Ensure borders are included in the element's dimensions */
+    background-color: #8B0000;
+    /* Dark red color */
+    border: 1px solid #5A0000;
+    /* Darker border for a brick-like appearance */
+    box-sizing: border-box;
+    /* Ensure borders are included in the element's dimensions */
 }
 
 .sidebar {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between; /* Distribute space between elements */
-    width: var(--sidebar-width); /* Dynamic width for the sidebar */
+    justify-content: space-between;
+    /* Distribute space between elements */
+    width: var(--sidebar-width);
+    /* Dynamic width for the sidebar */
     height: 100vh;
     background-color: #222;
     color: white;
-    margin-left: 0; /* Remove any left margin */
-    position: absolute; /* Position the sidebar absolutely */
-    right: 0; /* Align the sidebar to the right */
-    top: 0; /* Align the sidebar to the top */
+    margin-left: 0;
+    /* Remove any left margin */
+    position: absolute;
+    /* Position the sidebar absolutely */
+    right: 0;
+    /* Align the sidebar to the right */
+    top: 0;
+    /* Align the sidebar to the top */
 }
 
 .title {
-    font-size: 24px; /* Enlarged font size */
+    font-size: 24px;
+    /* Enlarged font size */
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 20px; /* Add padding to the top */
+    padding-top: 20px;
+    /* Add padding to the top */
 }
 
 .title .icon {
@@ -75,7 +101,8 @@
 }
 
 .title .highlight {
-    color: #ff69b4; /* Pink color for decoration */
+    color: #ff69b4;
+    /* Pink color for decoration */
     font-style: italic;
 }
 
@@ -98,7 +125,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px; /* Adjust margin to position at the bottom */
+    margin-bottom: 20px;
+    /* Adjust margin to position at the bottom */
 }
 
 .control-button {
@@ -135,7 +163,8 @@
 }
 
 .start-button {
-    background-color: #ff69b4; /*#28a745;*/
+    background-color: #ff69b4;
+    /*#28a745;*/
     color: white;
     font-size: 18px;
     padding: 10px 20px;
