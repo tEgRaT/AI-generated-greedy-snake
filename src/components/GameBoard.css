@@ -1,0 +1,163 @@
+:root {
+    --cell-size: calc(min(100vh, calc(100vw - var(--sidebar-width))) / 20); /* Adjusted for control component width */
+    --sidebar-width: 250px; /* Default sidebar width */
+}
+
+.game-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* Align items to the top */
+    justify-content: flex-start; /* Align items to the left */
+    height: 100vh;
+    width: 100vw;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(var(--columns), var(--cell-size)); /* Ensure equal width for all columns */
+    grid-template-rows: repeat(var(--rows), var(--cell-size)); /* Ensure equal height for all rows */
+    background-color: #333;
+    margin-right: 0; /* Remove any right margin */
+}
+
+.snake {
+    background-color: green;
+}
+
+.snake.flash {
+    animation: flash 0.5s linear 3;
+}
+
+@keyframes flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.food {
+    background-color: red;
+}
+
+.wall {
+    background-color: #8B0000; /* Dark red color */
+    border: 1px solid #5A0000; /* Darker border for a brick-like appearance */
+    box-sizing: border-box; /* Ensure borders are included in the element's dimensions */
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Distribute space between elements */
+    width: var(--sidebar-width); /* Dynamic width for the sidebar */
+    height: 100vh;
+    background-color: #222;
+    color: white;
+    margin-left: 0; /* Remove any left margin */
+    position: absolute; /* Position the sidebar absolutely */
+    right: 0; /* Align the sidebar to the right */
+    top: 0; /* Align the sidebar to the top */
+}
+
+.title {
+    font-size: 24px; /* Enlarged font size */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px; /* Add padding to the top */
+}
+
+.title .icon {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.title .highlight {
+    color: #ff69b4; /* Pink color for decoration */
+    font-style: italic;
+}
+
+.message {
+    font-size: 18px;
+    color: red;
+    /* margin-top: 10px; */
+}
+
+.message.flash {
+    animation: flash 0.5s linear 3;
+}
+
+.control-pad {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Adjust margin to position at the bottom */
+}
+
+.control-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #007BFF;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.control-button.up {
+    top: 10px;
+}
+
+.control-button.down {
+    bottom: 10px;
+}
+
+.control-button.left {
+    left: 10px;
+}
+
+.control-button.right {
+    right: 10px;
+}
+
+.control-button:active {
+    background-color: #0056b3;
+}
+
+.start-button {
+    background-color: #ff69b4; /*#28a745;*/
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* margin-top: 20px; */
+    /* margin-bottom: 40px; Add margin to the bottom */
+}
+
+.start-button:active {
+    background-color: #218838;
+}
+
+.start-button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.scoreboard {
+    font-size: 24px;
+    font-weight: bold;
+    /* margin-bottom: 20px; */
+    color: #ff69b4;
+}
