@@ -83,10 +83,10 @@
 }
 
 .title {
-    font-size: 24px;
+    font-size: 1.8rem;
     /* Enlarged font size */
     font-weight: bold;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     text-align: center;
     display: flex;
     align-items: center;
@@ -97,19 +97,21 @@
 
 .title .icon {
     margin-right: 10px;
-    font-size: 24px;
+    font-size: 1.8rem;
 }
 
 .title .highlight {
     color: #ff69b4;
     /* Pink color for decoration */
-    font-style: italic;
+    /* font-style: italic; */
 }
 
 .message {
-    font-size: 18px;
+    font-size: 2rem;
     color: red;
-    /* margin-top: 10px; */
+    display: block;
+    /* visibility: hidden; */
+    margin-top: -15px;
 }
 
 .message.flash {
@@ -135,7 +137,7 @@
     border-radius: 50%;
     background-color: #007BFF;
     color: white;
-    font-size: 18px;
+    font-size: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -166,7 +168,7 @@
     background-color: #ff69b4;
     /*#28a745;*/
     color: white;
-    font-size: 18px;
+    /* font-size: 18px; */
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -185,7 +187,7 @@
 }
 
 .scoreboard {
-    font-size: 24px;
+    font-size: 2rem;
     font-weight: bold;
     /* margin-bottom: 20px; */
     color: #ff69b4;

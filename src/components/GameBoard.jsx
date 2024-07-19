@@ -207,7 +207,6 @@ const GameBoard = () => {
                     <span className="icon">🌸</span>
                     送给
                     <span className="highlight">张梓萱</span>
-                    小朋友
                 </div>
                 <button className="start-button" onClick={startGame} disabled={isGameRunning}>开始</button>
                 <div className="scoreboard">{score}</div>
