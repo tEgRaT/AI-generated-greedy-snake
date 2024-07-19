@@ -108,7 +108,7 @@ const GameBoard = () => {
 
             // Check for collision with walls
             if (newHead[0] === 0 || newHead[0] === columns - 1 || newHead[1] === 0 || newHead[1] === rows - 1) {
-                setMessage('Game Over');
+                setMessage('Game Over!');
                 setIsGameRunning(false);
                 setIsFlashing(true);
                 setTimeout(() => setIsFlashing(false), 1500); // Flash for 3 times (0.5s * 3)
@@ -117,7 +117,7 @@ const GameBoard = () => {
 
             // Check for collision with self
             if (newSnake.some(segment => segment[0] === newHead[0] && segment[1] === newHead[1])) {
-                setMessage('Game Over');
+                setMessage('Game Over!');
                 setIsGameRunning(false);
                 setIsFlashing(true);
                 setTimeout(() => setIsFlashing(false), 1500); // Flash for 3 times (0.5s * 3)
